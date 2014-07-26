@@ -1,5 +1,5 @@
 //
-//  BSHViewController.h
+//  LoginRegisterViewController.h
 //  Pointr
 //
 //  Created by Adam Gleichsner on 7/26/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BSHViewController : UIViewController
+@interface LoginRegisterViewController : UIViewController
 
 @end
