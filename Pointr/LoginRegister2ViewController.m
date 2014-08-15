@@ -69,6 +69,8 @@
 
 - (IBAction)pointrLogIn:(id)sender {
     
+    self.loginButton.enabled = NO;
+    self.registerButton.enabled = NO;
     NSMutableURLRequest *pointrLogin = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://pointr-backend.herokuapp.com%@", @"/user/login"]]];
     [pointrLogin setHTTPMethod:@"POST"];
     NSString *loginString = [NSString stringWithFormat:@"username=%@&password=%@", self.usernameTextField.text, self.passwordTextField.text];
@@ -87,6 +89,9 @@
 
 
 - (IBAction)pointrRegister:(id)sender {
+    
+    self.loginButton.enabled = NO;
+    self.registerButton.enabled = NO;
     
     BSHAppDelegate *appDelegate = (BSHAppDelegate *)[[UIApplication sharedApplication] delegate];
     
@@ -176,9 +181,14 @@
                 self.errorMessage.text = @"Denied permission to update location, so no app for you.";
             } else if ([[returnDict objectForKey:@"message"] isEqualToString:@"USER NOT FOUND"]) {
                 self.errorMessage.text = @"This user doesn't exist; did you mean to register?";
+            } else {
+//                self.errorMessage.text = @"Couldn't communicate with server; please try again later.";
             }
         }
     }
+    
+    self.loginButton.enabled = YES;
+    self.registerButton.enabled = YES;
     
     // Release the connection and the data object
     // by setting the properties (declared elsewhere)

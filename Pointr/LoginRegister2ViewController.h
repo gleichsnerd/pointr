@@ -15,4 +15,6 @@
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *tap;
 @property (weak, nonatomic) IBOutlet UILabel *errorMessage;
 
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
+@property (weak, nonatomic) IBOutlet UIButton *registerButton;
 @end

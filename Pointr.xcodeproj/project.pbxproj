@@ -30,6 +30,10 @@
 		9BC716E51983B3BF002EA01F /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC716E41983B3BF002EA01F /* FriendsViewController.m */; };
 		9BC716E71983BD1F002EA01F /* horizontalArrowRight.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BC716E61983BD1F002EA01F /* horizontalArrowRight.png */; };
 		9BC716E91983BFCB002EA01F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BC716E81983BFCB002EA01F /* CoreLocation.framework */; };
+		9BE40476199D2939003DC7E3 /* compassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE40475199D2939003DC7E3 /* compassViewController.m */; };
+		9BE40478199D4312003DC7E3 /* Compass-Overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BE40477199D4312003DC7E3 /* Compass-Overlay.png */; };
+		9BFDCF681995E9C900C83096 /* SuitorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BFDCF671995E9C900C83096 /* SuitorsViewController.m */; };
+		9BFDCF6B19972CB000C83096 /* SuitorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BFDCF6A19972CB000C83096 /* SuitorTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +77,13 @@
 		9BC716E41983B3BF002EA01F /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
 		9BC716E61983BD1F002EA01F /* horizontalArrowRight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = horizontalArrowRight.png; sourceTree = "<group>"; };
 		9BC716E81983BFCB002EA01F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		9BE40474199D2939003DC7E3 /* compassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = compassViewController.h; sourceTree = "<group>"; };
+		9BE40475199D2939003DC7E3 /* compassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = compassViewController.m; sourceTree = "<group>"; };
+		9BE40477199D4312003DC7E3 /* Compass-Overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Compass-Overlay.png"; sourceTree = SOURCE_ROOT; };
+		9BFDCF661995E9C900C83096 /* SuitorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuitorsViewController.h; sourceTree = "<group>"; };
+		9BFDCF671995E9C900C83096 /* SuitorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuitorsViewController.m; sourceTree = "<group>"; };
+		9BFDCF6919972CB000C83096 /* SuitorTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuitorTableViewCell.h; sourceTree = "<group>"; };
+		9BFDCF6A19972CB000C83096 /* SuitorTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuitorTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,15 +149,22 @@
 				9BC716A919833B0C002EA01F /* BSHAppDelegate.h */,
 				9BC716AA19833B0C002EA01F /* BSHAppDelegate.m */,
 				9BC716AC19833B0C002EA01F /* Main.storyboard */,
+				9BE40477199D4312003DC7E3 /* Compass-Overlay.png */,
 				9BC716E61983BD1F002EA01F /* horizontalArrowRight.png */,
 				9BC716E31983B3BF002EA01F /* FriendsViewController.h */,
 				9BC716E41983B3BF002EA01F /* FriendsViewController.m */,
+				9BE40474199D2939003DC7E3 /* compassViewController.h */,
+				9BE40475199D2939003DC7E3 /* compassViewController.m */,
 				9BC716DF1983A69F002EA01F /* verticalArrowDown.png */,
 				9BC716E01983A69F002EA01F /* verticalArrowUp.png */,
 				9BC716D519837E3A002EA01F /* loginButton.png */,
 				9BC716D619837E3A002EA01F /* registerButton.png */,
 				9BC716DC198387B6002EA01F /* LoginRegister2ViewController.h */,
 				9BC716DD198387B6002EA01F /* LoginRegister2ViewController.m */,
+				9BFDCF661995E9C900C83096 /* SuitorsViewController.h */,
+				9BFDCF671995E9C900C83096 /* SuitorsViewController.m */,
+				9BFDCF6919972CB000C83096 /* SuitorTableViewCell.h */,
+				9BFDCF6A19972CB000C83096 /* SuitorTableViewCell.m */,
 				9BC716AF19833B0C002EA01F /* PointrNavigationController.h */,
 				9BC716B019833B0C002EA01F /* PointrNavigationController.m */,
 				9BC716B219833B0C002EA01F /* Images.xcassets */,
@@ -270,6 +288,7 @@
 				9BC716E71983BD1F002EA01F /* horizontalArrowRight.png in Resources */,
 				9BC716A519833B0C002EA01F /* InfoPlist.strings in Resources */,
 				9BC716AE19833B0C002EA01F /* Main.storyboard in Resources */,
+				9BE40478199D4312003DC7E3 /* Compass-Overlay.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,11 +307,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BFDCF6B19972CB000C83096 /* SuitorTableViewCell.m in Sources */,
 				9BC716E51983B3BF002EA01F /* FriendsViewController.m in Sources */,
 				9BC716DE198387B6002EA01F /* LoginRegister2ViewController.m in Sources */,
 				9BC716AB19833B0C002EA01F /* BSHAppDelegate.m in Sources */,
 				9BC716A719833B0C002EA01F /* main.m in Sources */,
+				9BFDCF681995E9C900C83096 /* SuitorsViewController.m in Sources */,
 				9BC716B119833B0C002EA01F /* PointrNavigationController.m in Sources */,
+				9BE40476199D2939003DC7E3 /* compassViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,6 +519,7 @@
 				9BC716CB19833B0C002EA01F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9BC716CC19833B0C002EA01F /* Build configuration list for PBXNativeTarget "PointrTests" */ = {
 			isa = XCConfigurationList;
@@ -505,6 +528,7 @@
 				9BC716CE19833B0C002EA01F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

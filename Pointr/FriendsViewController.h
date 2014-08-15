@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FriendsViewController : UIViewController
+@interface FriendsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate>
 @property (nonatomic, strong) NSString *accessToken;
 @property (nonatomic, strong) NSString *username;
 
+@property (weak, nonatomic) IBOutlet UITableView *friendsTable;
 @property (weak, nonatomic) IBOutlet UITextField *addFriendTextField;
 @end
