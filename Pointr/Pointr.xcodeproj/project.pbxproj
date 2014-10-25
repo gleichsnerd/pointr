@@ -24,7 +24,7 @@
 		9BC716D0198359D2002EA01F /* Pointr.mobileprovision in Resources */ = {isa = PBXBuildFile; fileRef = 9BC716CF198359D2002EA01F /* Pointr.mobileprovision */; };
 		9BC716D719837E3A002EA01F /* loginButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BC716D519837E3A002EA01F /* loginButton.png */; };
 		9BC716D819837E3A002EA01F /* registerButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BC716D619837E3A002EA01F /* registerButton.png */; };
-		9BC716DE198387B6002EA01F /* LoginRegister2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC716DD198387B6002EA01F /* LoginRegister2ViewController.m */; };
+		9BC716DE198387B6002EA01F /* LoginRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC716DD198387B6002EA01F /* LoginRegisterViewController.m */; };
 		9BC716E11983A69F002EA01F /* verticalArrowDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BC716DF1983A69F002EA01F /* verticalArrowDown.png */; };
 		9BC716E21983A69F002EA01F /* verticalArrowUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BC716E01983A69F002EA01F /* verticalArrowUp.png */; };
 		9BC716E51983B3BF002EA01F /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC716E41983B3BF002EA01F /* FriendsViewController.m */; };
@@ -69,8 +69,8 @@
 		9BC716CF198359D2002EA01F /* Pointr.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pointr.mobileprovision; sourceTree = "<group>"; };
 		9BC716D519837E3A002EA01F /* loginButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginButton.png; sourceTree = "<group>"; };
 		9BC716D619837E3A002EA01F /* registerButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = registerButton.png; sourceTree = "<group>"; };
-		9BC716DC198387B6002EA01F /* LoginRegister2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginRegister2ViewController.h; sourceTree = "<group>"; };
-		9BC716DD198387B6002EA01F /* LoginRegister2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginRegister2ViewController.m; sourceTree = "<group>"; };
+		9BC716DC198387B6002EA01F /* LoginRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginRegisterViewController.h; sourceTree = "<group>"; };
+		9BC716DD198387B6002EA01F /* LoginRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginRegisterViewController.m; sourceTree = "<group>"; };
 		9BC716DF1983A69F002EA01F /* verticalArrowDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = verticalArrowDown.png; sourceTree = "<group>"; };
 		9BC716E01983A69F002EA01F /* verticalArrowUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = verticalArrowUp.png; sourceTree = "<group>"; };
 		9BC716E31983B3BF002EA01F /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsViewController.h; sourceTree = "<group>"; };
@@ -159,8 +159,8 @@
 				9BC716E01983A69F002EA01F /* verticalArrowUp.png */,
 				9BC716D519837E3A002EA01F /* loginButton.png */,
 				9BC716D619837E3A002EA01F /* registerButton.png */,
-				9BC716DC198387B6002EA01F /* LoginRegister2ViewController.h */,
-				9BC716DD198387B6002EA01F /* LoginRegister2ViewController.m */,
+				9BC716DC198387B6002EA01F /* LoginRegisterViewController.h */,
+				9BC716DD198387B6002EA01F /* LoginRegisterViewController.m */,
 				9BFDCF661995E9C900C83096 /* SuitorsViewController.h */,
 				9BFDCF671995E9C900C83096 /* SuitorsViewController.m */,
 				9BFDCF6919972CB000C83096 /* SuitorTableViewCell.h */,
@@ -250,6 +250,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Brushfire Inc.";
 				TargetAttributes = {
+					9BC7169619833B0C002EA01F = {
+						DevelopmentTeam = E49S9A9ZRE;
+					};
 					9BC716B719833B0C002EA01F = {
 						TestTargetID = 9BC7169619833B0C002EA01F;
 					};
@@ -309,7 +312,7 @@
 			files = (
 				9BFDCF6B19972CB000C83096 /* SuitorTableViewCell.m in Sources */,
 				9BC716E51983B3BF002EA01F /* FriendsViewController.m in Sources */,
-				9BC716DE198387B6002EA01F /* LoginRegister2ViewController.m in Sources */,
+				9BC716DE198387B6002EA01F /* LoginRegisterViewController.m in Sources */,
 				9BC716AB19833B0C002EA01F /* BSHAppDelegate.m in Sources */,
 				9BC716A719833B0C002EA01F /* main.m in Sources */,
 				9BFDCF681995E9C900C83096 /* SuitorsViewController.m in Sources */,
@@ -439,10 +442,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Pointr/Pointr-Prefix.pch";
 				INFOPLIST_FILE = "Pointr/Pointr-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -452,10 +458,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Pointr/Pointr-Prefix.pch";
 				INFOPLIST_FILE = "Pointr/Pointr-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SuitorsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface SuitorsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate>
 @property (nonatomic, strong) NSMutableArray *suitorsList;
 @property (weak, nonatomic) IBOutlet UITableView *suitorsTable;
 

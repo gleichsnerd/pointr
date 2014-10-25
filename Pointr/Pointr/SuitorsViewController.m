@@ -15,22 +15,34 @@
 
 @implementation SuitorsViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.suitorsTable.dataSource = self;
     self.suitorsTable.delegate = self;
-    // Do any additional setup after loading the view.
+
+    UISwipeGestureRecognizer *swipeLeftGesture=[[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeGesture:)];
+    swipeLeftGesture.direction=UISwipeGestureRecognizerDirectionRight;
+    [self.view addGestureRecognizer:swipeLeftGesture];
+    
+    
+    
+    
 }
+
+-(void)handleSwipeGesture:(UIGestureRecognizer *) sender
+{
+    NSUInteger touches = sender.numberOfTouches;
+    if (touches >=1)
+    {
+        if (sender.state == UIGestureRecognizerStateEnded)
+        {
+            [self performSegueWithIdentifier:@"unwindToFriends" sender:self];
+        }
+    }
+}
+
 
 - (void)didReceiveMemoryWarning
 {
