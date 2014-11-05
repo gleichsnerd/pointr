@@ -111,9 +111,12 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="BBu-nd-Jri">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.21960784310000001" green="0.24313725489999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" red="0.21960784310000001" green="0.24313725489999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="0.21960784310000001" green="0.24313725489999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="suitorCell" id="Ofc-xE-qt6" customClass="SuitorTableViewCell">
+                                    <tableViewCell opaque="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="suitorCell" id="Ofc-xE-qt6" customClass="SuitorTableViewCell">
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ofc-xE-qt6" id="h7d-j3-KVs">
@@ -143,14 +146,15 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OBx-tX-2T6">
-                                                    <rect key="frame" x="27" y="20" width="207" height="21"/>
+                                                    <rect key="frame" x="28" y="0.0" width="207" height="57"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.85490196080000003" green="0.2666666667" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="acceptButton" destination="c7H-1s-AiK" id="4Oy-Ox-uE9"/>
                                             <outlet property="rejectButton" destination="m4A-7h-Vv8" id="S9Y-Cc-JyS"/>
@@ -159,8 +163,15 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Well, no suitors to be found here.  Why don't you check back later?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PIE-vD-i3c">
+                                <rect key="frame" x="10" y="125" width="300" height="200"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.21960784310000001" green="0.24313725489999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Suitors" id="CqC-si-Q3R">
                         <barButtonItem key="leftBarButtonItem" title="Friends" style="plain" id="VF2-qX-8zc">
@@ -170,6 +181,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="suitorlessText" destination="PIE-vD-i3c" id="gdo-f5-y5X"/>
                         <outlet property="suitorsTable" destination="BBu-nd-Jri" id="VYP-X5-dqH"/>
                         <segue destination="1W3-d7-v5C" kind="unwind" identifier="unwindToFriends" unwindAction="unwindToThisViewController:" id="jMU-AC-8zG"/>
                     </connections>
@@ -177,7 +189,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NZ8-rV-sPX" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="1W3-d7-v5C" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1201" y="-610"/>
+            <point key="canvasLocation" x="1201" y="-612"/>
         </scene>
         <!--Friends-->
         <scene sceneID="CUf-Cb-plf">
@@ -191,18 +203,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bil-Qf-9sf">
-                                <rect key="frame" x="0.0" y="242" width="320" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Add a friend" borderStyle="line" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SGZ-Zy-oFK">
-                                <rect key="frame" x="20" y="8" width="227" height="48"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="go"/>
-                            </textField>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="30" sectionFooterHeight="30" translatesAutoresizingMaskIntoConstraints="NO" id="Od9-hm-BKu">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" dataMode="prototypes" style="plain" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="100" sectionHeaderHeight="30" sectionFooterHeight="30" translatesAutoresizingMaskIntoConstraints="NO" id="Od9-hm-BKu">
                                 <rect key="frame" x="0.0" y="64" width="320" height="440"/>
                                 <color key="backgroundColor" red="0.21960784310000001" green="0.24313725489999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="separatorColor" red="0.21960784310000001" green="0.24313725489999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -210,10 +211,10 @@
                                 <color key="sectionIndexBackgroundColor" red="0.21960784310000001" green="0.24313725489999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexTrackingBackgroundColor" red="0.21960784310000001" green="0.24313725489999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="friendCell" textLabel="GXj-qi-SQK" rowHeight="90" style="IBUITableViewCellStyleDefault" id="etG-vD-AhC">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" shouldIndentWhileEditing="NO" reuseIdentifier="friendCell" textLabel="GXj-qi-SQK" rowHeight="90" style="IBUITableViewCellStyleDefault" id="etG-vD-AhC">
                                         <rect key="frame" x="0.0" y="30" width="320" height="90"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="etG-vD-AhC" id="iN4-S1-pqn">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" contentMode="center" tableViewCell="etG-vD-AhC" id="iN4-S1-pqn">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="89"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -226,11 +227,17 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Add a friend" borderStyle="line" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SGZ-Zy-oFK">
+                                <rect key="frame" x="47" y="8" width="200" height="48"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardType="alphabet" returnKeyType="go"/>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LWU-oH-qbj">
-                                <rect key="frame" x="255" y="15" width="48" height="33"/>
+                                <rect key="frame" x="255" y="16" width="48" height="33"/>
                                 <state key="normal" image="horizontalArrowRight.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -238,8 +245,17 @@
                                     <action selector="addFriend:" destination="NL0-X5-rv3" eventType="touchUpInside" id="5rg-Xj-D1Q"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SSw-4L-DnE">
+                                <rect key="frame" x="4" y="13" width="40" height="40"/>
+                                <state key="normal" image="settings.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="sL0-5m-bl1" kind="push" id="0VH-4p-XHe"/>
+                                </connections>
+                            </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Looks like you're lacking in the friends department.  Try adding a friend in the box above." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pIb-fY-Bf4">
-                                <rect key="frame" x="16" y="140" width="287" height="225"/>
+                                <rect key="frame" x="10" y="100" width="300" height="200"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -248,9 +264,6 @@
                         <color key="backgroundColor" red="0.21960784310000001" green="0.24313725489999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.21960784310000001" green="0.24313725489999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="942-xs-IPb" appends="YES" id="q7A-HV-wUl"/>
-                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Friends" id="NJH-df-Mzv">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="cxq-ER-uR7">
@@ -260,7 +273,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Suitors" id="df9-3I-0I3">
                             <connections>
-                                <segue destination="2LP-wv-wN4" kind="push" id="wPW-pN-H1H"/>
+                                <action selector="goToSuitors:" destination="NL0-X5-rv3" id="5sO-Dw-4B1"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -269,13 +282,11 @@
                         <outlet property="friendlessText" destination="pIb-fY-Bf4" id="A4Q-LP-huJ"/>
                         <outlet property="friendsTable" destination="Od9-hm-BKu" id="iVz-1M-QcZ"/>
                         <segue destination="2LP-wv-wN4" kind="push" identifier="friendsToSuitors" id="B3U-Oh-MaC"/>
-                        <segue destination="sL0-5m-bl1" kind="push" id="eSo-1z-z7o"/>
                         <segue destination="yhT-KA-E05" kind="push" identifier="friendsToCompass" id="2lj-Xl-wu3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rxx-OP-NEP" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="24d-Bp-rn3" userLabel="Exit" sceneMemberID="exit"/>
-                <tapGestureRecognizer id="942-xs-IPb"/>
             </objects>
             <point key="canvasLocation" x="1201" y="102"/>
         </scene>
@@ -311,6 +322,12 @@
                                     <constraint firstAttribute="height" constant="240" id="mj2-NU-jT7"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Distance Text" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gs-Pp-xKG">
+                                <rect key="frame" x="16" y="20" width="288" height="104"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.21960784310000001" green="0.24313725489999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -338,7 +355,7 @@
                         <viewControllerLayoutGuide type="bottom" id="WWt-pp-plp"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="sjY-q8-NsY">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -360,7 +377,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Wqo-sU-EWY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="bMx-xb-KSH">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -402,6 +419,7 @@
     <resources>
         <image name="Compass-Overlay.png" width="717" height="717"/>
         <image name="horizontalArrowRight.png" width="96" height="61"/>
+        <image name="settings.png" width="82" height="82"/>
         <image name="verticalArrowDown.png" width="61" height="96"/>
         <image name="verticalArrowUp.png" width="61" height="96"/>
     </resources>
@@ -410,7 +428,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="wPW-pN-H1H"/>
-    </inferredMetricsTieBreakers>
 </document>

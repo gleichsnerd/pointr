@@ -15,5 +15,7 @@
 @property double friendLat;
 @property double friendLong;
 
+@property (strong, nonatomic) NSString* friendName;
+
 
 @end

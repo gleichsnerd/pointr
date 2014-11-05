@@ -26,10 +26,14 @@
     swipeLeftGesture.direction=UISwipeGestureRecognizerDirectionRight;
     [self.view addGestureRecognizer:swipeLeftGesture];
     
-    
-    
+    if ([self.suitorsList count] == 0) {
+        self.suitorlessText.hidden = false;
+    } else {
+        self.suitorlessText.hidden = true;
+    }
     
 }
+
 
 -(void)handleSwipeGesture:(UIGestureRecognizer *) sender
 {
@@ -55,14 +59,26 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     //We will always have only 1 section
-    return 1;
+    return [self.suitorsList count];
+
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    NSLog(@"%lu", (unsigned long)[self.suitorsList count]);
-    return [self.suitorsList count];
+    return 1;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 10.; // you can have your own choice, of course
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *headerView = [[UIView alloc] init];
+    headerView.backgroundColor = [UIColor clearColor];
+    return headerView;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -73,10 +89,10 @@
                              dequeueReusableCellWithIdentifier:cellIdentifier];
     
     //Set a clear background so we can use an image instead
-    cell.backgroundColor = [UIColor clearColor];
+    cell.backgroundColor = [UIColor colorWithRed:218/255.0f green:68/255.0f blue:83/255.0f alpha:1];
     cell.opaque = NO;
     
-    cell.suitorName.text = [self.suitorsList objectAtIndex:indexPath.row]; //objectForKey:@"username"];
+    cell.suitorName.text = [self.suitorsList objectAtIndex:indexPath.section]; //objectForKey:@"username"];
 //    cell.accessToken = self.accessToken;
 //    cell.username = self.username;
 //    cell.friendName = [self.suitorsList objectAtIndex:indexPath.row];
@@ -99,10 +115,11 @@
 - (IBAction)reject:(id)sender {
     CGPoint hitPoint = [sender convertPoint:CGPointZero toView:self.suitorsTable];
     NSIndexPath *hitIndex = [self.suitorsTable indexPathForRowAtPoint:hitPoint];
+    NSIndexSet *hitSet = [[NSIndexSet alloc] initWithIndex:hitIndex.section];
     
     NSMutableURLRequest *addFriend = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://pointr-backend.herokuapp.com%@", @"/friends/reject"]]];
     [addFriend setHTTPMethod:@"POST"];
-    NSString *friendString = [NSString stringWithFormat:@"accessToken=%@&username=%@&friend_username=%@", self.accessToken, self.username, [self.suitorsList objectAtIndex:hitIndex.row]];
+    NSString *friendString = [NSString stringWithFormat:@"accessToken=%@&username=%@&friend_username=%@", self.accessToken, self.username, [self.suitorsList objectAtIndex:hitIndex.section]];
     [addFriend setHTTPBody:[friendString dataUsingEncoding:NSUTF8StringEncoding]];
     NSError *error;
     NSURLResponse *response;
@@ -111,8 +128,8 @@
     if ([dict objectForKey:@"success"]) {
         [self.suitorsTable beginUpdates];
         NSLog(@"Selected row: %d", hitIndex.row);
-        [self.suitorsTable deleteRowsAtIndexPaths:@[hitIndex] withRowAnimation:UITableViewRowAnimationLeft];
-        [self.suitorsList removeObjectAtIndex:hitIndex.row];
+        [self.suitorsTable deleteSections:hitSet withRowAnimation:UITableViewRowAnimationLeft];
+        [self.suitorsList removeObjectAtIndex:hitIndex.section];
         [self.suitorsTable endUpdates];
     } else {
         NSLog(@"Error: cannot reject suitor request");
@@ -123,10 +140,10 @@
 - (IBAction)accept:(id)sender {
     CGPoint hitPoint = [sender convertPoint:CGPointZero toView:self.suitorsTable];
     NSIndexPath *hitIndex = [self.suitorsTable indexPathForRowAtPoint:hitPoint];
-    
+    NSIndexSet *hitSet = [[NSIndexSet alloc] initWithIndex:hitIndex.section];
     NSMutableURLRequest *addFriend = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://pointr-backend.herokuapp.com%@", @"/friends/add"]]];
     [addFriend setHTTPMethod:@"POST"];
-    NSString *friendString = [NSString stringWithFormat:@"accessToken=%@&username=%@&friend_username=%@", self.accessToken, self.username, [self.suitorsList objectAtIndex:hitIndex.row]];
+    NSString *friendString = [NSString stringWithFormat:@"accessToken=%@&username=%@&friend_username=%@", self.accessToken, self.username, [self.suitorsList objectAtIndex:hitIndex.section]];
     [addFriend setHTTPBody:[friendString dataUsingEncoding:NSUTF8StringEncoding]];
     NSError *error;
     NSURLResponse *response;
@@ -135,8 +152,8 @@
     if ([dict objectForKey:@"success"]) {
         [self.suitorsTable beginUpdates];
         NSLog(@"Selected row: %d", hitIndex.row);
-        [self.suitorsTable deleteRowsAtIndexPaths:@[hitIndex] withRowAnimation:UITableViewRowAnimationRight];
-        [self.suitorsList removeObjectAtIndex:hitIndex.row];
+        [self.suitorsTable deleteSections:hitSet withRowAnimation:UITableViewRowAnimationRight];
+        [self.suitorsList removeObjectAtIndex:hitIndex.section];
         [self.suitorsTable endUpdates];
     } else {
         NSLog(@"Error: cannot accept suitor request");

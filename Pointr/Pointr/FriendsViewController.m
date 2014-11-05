@@ -51,15 +51,17 @@
     // Do any additional setup after loading the view.
     
     self.tap = [[UITapGestureRecognizer alloc]
-                initWithTarget:self
-                action:@selector(dismissKeyboard)];
-    
-    [self.view addGestureRecognizer:self.tap];
+                                          initWithTarget:self
+                                          action:@selector(dismissKeyboard)];
     
     UISwipeGestureRecognizer *swipeLeftGesture=[[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeGesture:)];
     swipeLeftGesture.direction=UISwipeGestureRecognizerDirectionLeft;
     [self.view addGestureRecognizer:swipeLeftGesture];
     
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    [self.view addGestureRecognizer:self.tap];
 }
 
 -(void)handleSwipeGesture:(UIGestureRecognizer *) sender
@@ -106,6 +108,11 @@
 }
 
 -(void)dismissKeyboard {
+    for (UIGestureRecognizer *gesture in [self.view gestureRecognizers]) {
+        if ([gesture isKindOfClass:[UITapGestureRecognizer class]]) {
+            [self.view removeGestureRecognizer:gesture];
+        }
+    }
     [self.addFriendTextField resignFirstResponder];
     [self performSelector:@selector(defaultFieldText) withObject:nil afterDelay:1.5];
 }
@@ -173,6 +180,7 @@
                 self.friendsList = [NSMutableArray arrayWithArray:[friendDict valueForKey:@"friends"]];
                 self.suitorsList = [NSMutableArray arrayWithArray:[friendDict valueForKey:@"suitors"]];
                 NSLog(@"Successfully loaded %lu friends", (unsigned long)[self.friendsList count]);
+                NSLog(@"Successfully loaded %lu suitors", (unsigned long)[self.suitorsList count]);
                 if ([self.friendsList count] == 0) {
                     self.friendlessText.hidden = false;
                 } else {
@@ -228,6 +236,9 @@
     UIView *headerView = [[UIView alloc] init];
     headerView.backgroundColor = [UIColor clearColor];
     return headerView;
+}
+- (IBAction)goToSuitors:(id)sender {
+    [self performSegueWithIdentifier:@"friendsToSuitors" sender:self];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

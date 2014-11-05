@@ -16,10 +16,14 @@
 
 @property double bearing;
 @property CLLocationManager* locationManager;
+@property (strong, nonatomic) NSDictionary *distancePhrases;
+@property (strong, nonatomic) NSString *prevDist;
 
 @end
 
 @implementation CompassViewController
+
+typedef enum {DIST_CLOSE, DIST_WALK, DIST_BIKE, DIST_CAR, DIST_FAR, DIST_TOOFAR} FRIEND_DISTANCE;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -50,6 +54,28 @@
     [self.locationManager startUpdatingLocation];
     [self.locationManager startUpdatingHeading];
     
+    self.distancePhrases = [self setDistancePhrases];
+    
+}
+
+- (NSDictionary *)setDistancePhrases
+{
+    NSDictionary *returnDict = [[NSDictionary alloc] init];
+    NSArray *closePhrases = [[NSArray alloc] initWithObjects:@"", nil];
+    NSArray *walkPhrases = [[NSArray alloc] initWithObjects:@"", nil];
+    NSArray *bikePhrases = [[NSArray alloc] initWithObjects:@"", nil];
+    NSArray *carPhrases = [[NSArray alloc] initWithObjects:@"", nil];
+    NSArray *farPhrases = [[NSArray alloc] initWithObjects:@"", nil];
+    NSArray *tooFarPhrases = [[NSArray alloc] initWithObjects:@"", nil];
+    
+    [returnDict setValue:closePhrases forKey:@"close"];
+    [returnDict setValue:walkPhrases forKey:@"walk"];
+    [returnDict setValue:bikePhrases forKey:@"bike"];
+    [returnDict setValue:carPhrases forKey:@"car"];
+    [returnDict setValue:farPhrases forKey:@"far"];
+    [returnDict setValue:tooFarPhrases forKey:@"tooFar"];
+    
+    return returnDict;
 }
 
 - (double)getHeadingForDirectionFromCoordinate:(CLLocationCoordinate2D)fromLoc toCoordinate:(CLLocationCoordinate2D)toLoc

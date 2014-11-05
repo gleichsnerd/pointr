@@ -11,6 +11,7 @@
 @interface SuitorsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate>
 @property (nonatomic, strong) NSMutableArray *suitorsList;
 @property (weak, nonatomic) IBOutlet UITableView *suitorsTable;
+@property (weak, nonatomic) IBOutlet UILabel *suitorlessText;
 
 @property (nonatomic, strong) NSString *accessToken;
 @property (nonatomic, strong) NSString *username;
