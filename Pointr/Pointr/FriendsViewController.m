@@ -9,17 +9,15 @@
 #import "FriendsViewController.h"
 #import "SuitorsViewController.h"
 #import "CompassViewController.h"
-#import <CoreLocation/CoreLocation.h>
 
 @interface FriendsViewController ()
 
 @property (nonatomic, strong) NSMutableData *receivedData;
-@property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) NSString *requestFlag;
 
-@property (strong, nonatomic) IBOutlet UITapGestureRecognizer *tap;
+@property (nonatomic, strong) IBOutlet UITapGestureRecognizer *tap;
 
-@property(nonatomic) NSInteger currentPage;
+@property (nonatomic) NSInteger currentPage;
 
 @property (nonatomic, strong) NSMutableArray *friendsList;
 @property (nonatomic, strong) NSMutableArray *suitorsList;
@@ -44,6 +42,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.locationManager.delegate = self;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    self.locationManager.distanceFilter = kCLDistanceFilterNone;
+    
     self.addFriendTextField.borderStyle = UITextBorderStyleRoundedRect;
     self.friendsTable.delegate = self;
     self.friendsTable.dataSource = self;
@@ -54,9 +56,16 @@
                                           initWithTarget:self
                                           action:@selector(dismissKeyboard)];
     
-    UISwipeGestureRecognizer *swipeLeftGesture=[[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeGesture:)];
-    swipeLeftGesture.direction=UISwipeGestureRecognizerDirectionLeft;
-    [self.view addGestureRecognizer:swipeLeftGesture];
+    [self.navItem setLeftBarButtonItem:self.left];
+    
+//    UISwipeGestureRecognizer *swipeLeftGesture=[[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeLeftGesture:)];
+//    swipeLeftGesture.direction=UISwipeGestureRecognizerDirectionLeft;
+//    [self.view addGestureRecognizer:swipeLeftGesture];
+//    
+//    UISwipeGestureRecognizer *swipeRightGesture=[[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeRightGesture:)];
+//    swipeRightGesture.direction=UISwipeGestureRecognizerDirectionRight;
+//    [self.view addGestureRecognizer:swipeRightGesture];
+
     
 }
 
@@ -64,7 +73,19 @@
     [self.view addGestureRecognizer:self.tap];
 }
 
--(void)handleSwipeGesture:(UIGestureRecognizer *) sender
+-(void)handleSwipeRightGesture:(UIGestureRecognizer *) sender
+{
+    NSUInteger touches = sender.numberOfTouches;
+    if (touches >=1)
+    {
+        if (sender.state == UIGestureRecognizerStateEnded)
+        {
+            [self performSegueWithIdentifier:@"friendsToSettings" sender:self];
+        }
+    }
+}
+
+-(void)handleSwipeLeftGesture:(UIGestureRecognizer *) sender
 {
     NSUInteger touches = sender.numberOfTouches;
     if (touches >=1)
@@ -80,7 +101,18 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [self.locationManager startUpdatingLocation];
     [self updateLocation];
+    [self loadFriends];
+    
+    SuitorsViewController *uc = [self.pages objectAtIndex:2];
+    uc.suitorsList = self.suitorsList;
+    uc.username = self.username;
+    uc.accessToken = self.accessToken;
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [self.locationManager stopUpdatingLocation];
 }
 
 - (IBAction)addFriend:(id)sender {
@@ -89,7 +121,7 @@
         ![[self.addFriendTextField text] isEqualToString:@"Success!"] ||
         ![[self.addFriendTextField text] isEqualToString:@"Failure!"]) {
         
-        NSMutableURLRequest *addFriend = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://pointr-backend.herokuapp.com%@", @"/friends/add"]]];
+        NSMutableURLRequest *addFriend = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://pointr-backend-2.herokuapp.com%@", @"/friends/add"]]];
         [addFriend setHTTPMethod:@"POST"];
         NSString *friendString = [NSString stringWithFormat:@"accessToken=%@&username=%@&friend_username=%@", self.accessToken, self.username, self.addFriendTextField.text];
         [addFriend setHTTPBody:[friendString dataUsingEncoding:NSUTF8StringEncoding]];
@@ -127,20 +159,14 @@
 {
 }
 
-
 - (void)updateLocation
 {
-    self.locationManager = [[CLLocationManager alloc] init];
-    
-    [self.locationManager startUpdatingLocation];
     CLLocationDegrees latitude = self.locationManager.location.coordinate.latitude;
     CLLocationDegrees longitude = self.locationManager.location.coordinate.longitude;
-    [self.locationManager stopUpdatingLocation];
-    self.locationManager = nil;
     
     self.requestFlag = @"location_update";
     
-    NSMutableURLRequest *locationUpdate = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://pointr-backend.herokuapp.com%@", @"/user/location"]]];
+    NSMutableURLRequest *locationUpdate = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://pointr-backend-2.herokuapp.com%@", @"/user/location"]]];
     [locationUpdate setHTTPMethod:@"POST"];
     NSString *locationString = [NSString stringWithFormat:@"accessToken=%@&username=%@&latitude=%f&longitude=%f", self.accessToken, self.username, latitude, longitude];
     [locationUpdate setHTTPBody:[locationString dataUsingEncoding:NSUTF8StringEncoding]];
@@ -150,16 +176,11 @@
     
     NSData *locationData = [NSURLConnection sendSynchronousRequest:locationUpdate returningResponse:&response error:&error];
     if (locationData) {
-        NSLog(@"Location updated.");
-        if (true) {
-            [self loadFriends];
-        }
+        NSLog(@"Location updated with values %f, %f.", latitude, longitude);
     } else {
         NSLog(@"Location update failure.");
-        if (true) {
-            [self loadFriends];
-        }
     }
+    
 }
 
 - (void)loadFriends
@@ -167,7 +188,7 @@
  
     self.friendsList = [NSMutableArray array];
     self.requestFlag = @"load_friends";
-    NSMutableURLRequest *loadFriends = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://pointr-backend.herokuapp.com/user/friends?accessToken=%@&username=%@", self.accessToken, self.username]]];
+    NSMutableURLRequest *loadFriends = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://pointr-backend-2.herokuapp.com/user/friends?accessToken=%@&username=%@", self.accessToken, self.username]]];
     [loadFriends setHTTPMethod:@"GET"];
     NSError *error;
     NSURLResponse *response;
@@ -215,20 +236,20 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    //We will always have only 1 section
-    
+    //We need a section for each friend
     return [self.friendsList count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
+    //1 friend per section
     return 1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 10.; // you can have your own choice, of course
+    //Put a gap between each friend
+    return 10.;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -282,29 +303,20 @@
     
     
     cell.opaque = NO;
-    
-    cell.textLabel.text = [[self.friendsList objectAtIndex:indexPath.section] objectForKey:@"username"]; //objectForKey:@"username"];
-//    //Sets backgroundView to display an image instead of a solid color
-//    cell.backgroundView = [[UIImageView alloc] initWithImage: [UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/%@", [[NSBundle mainBundle] resourcePath],@"lh_tab_w_arrow.png"]]];
-    
-    //Set the cell text to a blue color
-//    cell.textLabel.textColor = [UIColor colorWithRed:0/255.0f green: 87/255.0f blue: 141/255.0f alpha:1];
-//    cell.detailTextLabel.textColor = [UIColor colorWithRed:0/255.0f green: 87/255.0f blue: 141/255.0f alpha:1];
-//    
-    //Print out relevant information regarting customer and his tours
-//    cell.textLabel.text = [[self.friendsList object] objectAtIndex:indexPath.row];
-//    cell.detailTextLabel.text = [NSString stringWithFormat:@"%lu tours available", (unsigned long)[self.tableContent[1][indexPath.row] count]];
+
+    cell.textLabel.text = [[self.friendsList objectAtIndex:indexPath.section] objectForKey:@"username"];
     
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"Selected row %d", indexPath.row);
-    id preLat = [[self.friendsList objectAtIndex:indexPath.row] valueForKey:@"latitude"];
-    id preLong = [[self.friendsList objectAtIndex:indexPath.row] objectForKey:@"longitude"];
+    
+    id preLat = [[self.friendsList objectAtIndex:indexPath.section] valueForKey:@"latitude"];
+    id preLong = [[self.friendsList objectAtIndex:indexPath.section] objectForKey:@"longitude"];
     self.sendLat = [preLat doubleValue];
     self.sendLong = [preLong doubleValue];
+    NSLog(@"Selected row %ld with username %@ and location (%f, %f)", (long)indexPath.section, [[self.friendsList objectAtIndex:indexPath.section] valueForKey:@"username"], self.sendLat, self. sendLong);
     
     [self performSegueWithIdentifier:@"friendsToCompass" sender:self];
 }

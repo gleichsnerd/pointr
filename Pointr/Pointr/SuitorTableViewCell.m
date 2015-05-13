@@ -31,7 +31,7 @@
     // Configure the view for the selected state
 }
 //- (IBAction)accept:(id)sender {
-//    NSMutableURLRequest *addFriend = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://pointr-backend.herokuapp.com%@", @"/friends/add"]]];
+//    NSMutableURLRequest *addFriend = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://pointr-backend-2.herokuapp.com%@", @"/friends/add"]]];
 //    [addFriend setHTTPMethod:@"POST"];
 //    NSString *friendString = [NSString stringWithFormat:@"accessToken=%@&username=%@&friend_username=%@", self.accessToken, self.username, self.friendName];
 //    [addFriend setHTTPBody:[friendString dataUsingEncoding:NSUTF8StringEncoding]];

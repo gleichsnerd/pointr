@@ -16,4 +16,13 @@
 @property (nonatomic, strong) NSString *accessToken;
 @property (nonatomic, strong) NSString *username;
 
+@property NSUInteger pageIndex;
+@property (strong, nonatomic) NSArray *pages;
+
+@property (nonatomic, strong) UIBarButtonItem *left;
+@property (nonatomic, strong) UIBarButtonItem *middle;
+@property (nonatomic, strong) UIBarButtonItem *right;
+@property (weak, nonatomic) IBOutlet UINavigationBar *navbar;
+@property (weak, nonatomic) IBOutlet UINavigationItem *navItem;
+
 @end

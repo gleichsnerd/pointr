@@ -7,32 +7,32 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>1486EF10-1C1B-41E1-9AB6-B4557EDE7FBE</string>
 	<key>IDESourceControlProjectName</key>
-	<string>Pointr</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>C45510CD-A976-44B0-BFC9-706511368AD3</key>
+		<key>10D4B9E3D8E0C49DAE77536205C4053CB3A3A8AC</key>
 		<string>https://github.com/gleichsnerd/pointr.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Pointr.xcodeproj/project.xcworkspace</string>
+	<string>Pointr/Pointr.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>C45510CD-A976-44B0-BFC9-706511368AD3</key>
-		<string>../..</string>
+		<key>10D4B9E3D8E0C49DAE77536205C4053CB3A3A8AC</key>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/gleichsnerd/pointr.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>C45510CD-A976-44B0-BFC9-706511368AD3</string>
+	<string>10D4B9E3D8E0C49DAE77536205C4053CB3A3A8AC</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>C45510CD-A976-44B0-BFC9-706511368AD3</string>
+			<string>10D4B9E3D8E0C49DAE77536205C4053CB3A3A8AC</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Pointr</string>
 		</dict>

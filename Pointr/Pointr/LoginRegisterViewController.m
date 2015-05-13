@@ -9,6 +9,8 @@
 #import "LoginRegisterViewController.h"
 #import "BSHAppDelegate.h"
 #import "FriendsViewController.h"
+#import "SettingsViewController.h"
+#import "SuitorsViewController.h"
 #import <CoreLocation/CoreLocation.h>
 
 @interface LoginRegisterViewController ()
@@ -30,9 +32,14 @@
     return self;
 }
 
+- (UIStatusBarStyle) preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationController.navigationBar.barStyle = UIBarStyleDefault;
     // Do any additional setup after loading the view.
 //    [self.usernameTextField setAction:@selector(usernameNext:)];
     [self.usernameTextField setDelegate:self];
@@ -44,13 +51,7 @@
     [self.view addGestureRecognizer:self.tap];
     
     self.locationManager = [[CLLocationManager alloc] init];
-    
-    [self.locationManager startUpdatingLocation];
-    CLLocationDegrees latitude = self.locationManager.location.coordinate.latitude;
-    CLLocationDegrees longitude = self.locationManager.location.coordinate.longitude;
-    [self.locationManager stopUpdatingLocation];
-    self.locationManager = nil;
-//    [tap setCancelsTouchesInView:NO];
+    [self.locationManager requestAlwaysAuthorization];
     
 }
 
@@ -85,7 +86,7 @@
     
     self.loginButton.enabled = NO;
     self.registerButton.enabled = NO;
-    NSMutableURLRequest *pointrLogin = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://pointr-backend.herokuapp.com%@", @"/user/login"]]];
+    NSMutableURLRequest *pointrLogin = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://pointr-backend-2.herokuapp.com%@", @"/user/login"]]];
     [pointrLogin setHTTPMethod:@"POST"];
     NSString *loginString = [NSString stringWithFormat:@"username=%@&password=%@", self.usernameTextField.text, self.passwordTextField.text];
     [pointrLogin setHTTPBody:[loginString dataUsingEncoding:NSUTF8StringEncoding]];
@@ -109,7 +110,7 @@
     
     BSHAppDelegate *appDelegate = (BSHAppDelegate *)[[UIApplication sharedApplication] delegate];
     
-    NSMutableURLRequest *pointrRegister = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://pointr-backend.herokuapp.com%@", @"/user/register"]]];
+    NSMutableURLRequest *pointrRegister = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://pointr-backend-2.herokuapp.com%@", @"/user/register"]]];
     [pointrRegister setHTTPMethod:@"POST"];
     NSString *loginString = [NSString stringWithFormat:@"username=%@&password=%@&device=%@", self.usernameTextField.text, self.passwordTextField.text, appDelegate.getDeviceToken];
     [pointrRegister setHTTPBody:[loginString dataUsingEncoding:NSUTF8StringEncoding]];
@@ -128,6 +129,101 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) initBasePages {
+    
+    _pageTitles = @[@"Settings", @"Friends", @"Suitors"];
+    
+    self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
+    self.pageViewController.dataSource = self;
+    self.pageViewController.view.backgroundColor = [UIColor colorWithRed:56/255.0f green:62/255.0f blue:88/255.0f alpha:1.0f];
+    self.pageViewController.automaticallyAdjustsScrollViewInsets = false;
+    
+    SettingsViewController *sc = [self.storyboard instantiateViewControllerWithIdentifier:@"SettingsViewController"];
+    sc.pageIndex = 0;
+    FriendsViewController  *fc = [self.storyboard instantiateViewControllerWithIdentifier:@"FriendsViewController"];
+    fc.pageIndex = 1;
+    SuitorsViewController  *uc = [self.storyboard instantiateViewControllerWithIdentifier:@"SuitorsViewController"];
+    uc.pageIndex = 2;
+    
+    self.pages = @[sc, fc, uc];
+    sc.pages = self.pages;
+    fc.pages = self.pages;
+    uc.pages = self.pages;
+    
+    UIBarButtonItem *fb = [[UIBarButtonItem alloc]  initWithTitle:@"Foo" style:UIBarButtonItemStylePlain target:fc action:nil];
+    fc.left = fb;
+    
+    fc.locationManager = self.locationManager;
+    fc.accessToken = self.accessToken;
+    fc.username = self.usernameTextField.text;
+    
+    SettingsViewController *startingViewController = (SettingsViewController *)[self viewControllerAtIndex:1];
+    NSArray *viewControllers = @[startingViewController];
+    [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+    
+    // Change the size of page view controller
+    self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 30);
+
+    [self.navigationController pushViewController:self.pageViewController animated:YES];
+//    [self addChildViewController:_pageViewController];
+//    [self.view addSubview:_pageViewController.view];
+//    [self.pageViewController didMoveToParentViewController:self];
+    
+}
+
+#pragma mark - Page View Controller Data Source
+- (UIViewController *)viewControllerAtIndex:(NSUInteger)index
+{
+    if (([self.pages count] == 0) || (index >= [self.pages count])) {
+        return nil;
+    }
+    
+    return self.pages[index];
+}
+
+
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
+{
+    NSUInteger index;
+    if ([viewController isKindOfClass:[FriendsViewController class]]) {
+        index = ((FriendsViewController*) viewController).pageIndex;
+    } else if ([viewController isKindOfClass:[SuitorsViewController class]]) {
+        index = ((SuitorsViewController*) viewController).pageIndex;
+    } else if ([viewController isKindOfClass:[SettingsViewController class]]) {
+        index = ((SettingsViewController*) viewController).pageIndex;
+    }
+    
+    
+    if ((index == 0) || (index == NSNotFound)) {
+        return nil;
+    }
+    
+    index--;
+    return [self viewControllerAtIndex:index];
+}
+
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
+{
+    NSUInteger index;
+    if ([viewController isKindOfClass:[FriendsViewController class]]) {
+        index = ((FriendsViewController*) viewController).pageIndex;
+    } else if ([viewController isKindOfClass:[SuitorsViewController class]]) {
+        index = ((SuitorsViewController*) viewController).pageIndex;
+    } else if ([viewController isKindOfClass:[SettingsViewController class]]) {
+        index = ((SettingsViewController*) viewController).pageIndex;
+    }
+    
+    if (index == NSNotFound) {
+        return nil;
+    }
+    
+    index++;
+    if (index == [self.pageTitles count]) {
+        return nil;
+    }
+    return [self viewControllerAtIndex:index];
 }
 
 #pragma mark - URL Connection
@@ -181,7 +277,9 @@
         NSDictionary *returnDict = returnData;
         if ([[returnDict objectForKey:@"success"] isEqualToNumber:[[NSNumber alloc] initWithInt:1]]) {
             self.accessToken = [returnDict objectForKey:@"accessToken"];
-            [self performSegueWithIdentifier:@"loginToFriends" sender:self];
+            [self initBasePages];
+//            [self performSegueWithIdentifier:@"loginToBase" sender:self];
+//            [self performSegueWithIdentifier:@"loginToFriends" sender:self];
         } else {
             if ([[returnDict objectForKey:@"message"] isEqualToString:@"INTERNAL ERROR"]) {
                 self.errorMessage.text = @"We're locked in an epic battle between good and evil; come back later.";
@@ -215,8 +313,6 @@
     self.receivedData = nil;
 }
 
-
-
  #pragma mark - Navigation
  
  // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -227,10 +323,10 @@
      
      if ([[segue identifier] isEqualToString:@"loginToFriends"]) {
          FriendsViewController *destination = [segue destinationViewController];
+         destination.locationManager = self.locationManager;
          destination.accessToken = self.accessToken;
          destination.username = self.usernameTextField.text;
      }
-     
  }
 
 

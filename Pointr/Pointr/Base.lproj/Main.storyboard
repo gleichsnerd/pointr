@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="TGm-ku-Mzw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="TGm-ku-Mzw">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <scenes>
         <!--Login Register View Controller-->
@@ -14,11 +14,11 @@
                         <viewControllerLayoutGuide type="bottom" id="eUP-Gr-SYu"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Dyj-Zn-rD9">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z2y-29-obM">
-                                <rect key="frame" x="213" y="302" width="40" height="60"/>
+                                <rect key="frame" x="213" y="417" width="40" height="60"/>
                                 <state key="normal" image="verticalArrowDown.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -27,7 +27,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="utN-bw-QcP">
-                                <rect key="frame" x="65" y="302" width="40" height="60"/>
+                                <rect key="frame" x="65" y="417" width="40" height="60"/>
                                 <state key="normal" image="verticalArrowUp.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -36,40 +36,46 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2tR-Vm-cXP">
-                                <rect key="frame" x="38" y="169" width="245" height="30"/>
+                                <rect key="frame" x="38" y="284" width="245" height="30"/>
                                 <color key="backgroundColor" red="0.37647058823529411" green="0.396078431372549" blue="0.47450980392156861" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aKE-Qa-dBv">
-                                <rect key="frame" x="38" y="207" width="245" height="30"/>
+                                <rect key="frame" x="38" y="322" width="245" height="30"/>
                                 <color key="backgroundColor" red="0.37647058820000001" green="0.39607843139999999" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You're just a few steps away from finding your friends!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="245" translatesAutoresizingMaskIntoConstraints="NO" id="bnT-0D-Wcp">
-                                <rect key="frame" x="38" y="26" width="245" height="135"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
+                                <rect key="frame" x="38" y="141" width="245" height="135"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="19"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Register" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SvB-Pc-XE0">
-                                <rect key="frame" x="44" y="370" width="83" height="21"/>
+                                <rect key="frame" x="44" y="485" width="83" height="21"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Log in" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="544-Zh-9St">
-                                <rect key="frame" x="192" y="370" width="83" height="24"/>
+                                <rect key="frame" x="192" y="485" width="83" height="24"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="231" translatesAutoresizingMaskIntoConstraints="NO" id="Nz3-Kf-GZB">
-                                <rect key="frame" x="44" y="245" width="231" height="49"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="14"/>
+                                <rect key="frame" x="38" y="360" width="237" height="49"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="19"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="pointr" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwW-Yg-Rgf">
+                                <rect key="frame" x="16" y="69" width="288" height="64"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="66"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -89,28 +95,27 @@
                         <outlet property="registerButton" destination="utN-bw-QcP" id="Urd-15-kxg"/>
                         <outlet property="tap" destination="V21-Xa-evv" id="mkK-9I-NRw"/>
                         <outlet property="usernameTextField" destination="2tR-Vm-cXP" id="EXY-QL-A1Q"/>
-                        <segue destination="NL0-X5-rv3" kind="push" identifier="loginToFriends" id="3Ex-8Y-k0i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="V21-Xa-evv"/>
             </objects>
-            <point key="canvasLocation" x="737" y="102"/>
+            <point key="canvasLocation" x="747" y="96"/>
         </scene>
         <!--Suitors-->
         <scene sceneID="Fzx-wN-Sn1">
             <objects>
-                <viewController id="2LP-wv-wN4" customClass="SuitorsViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SuitorsViewController" id="2LP-wv-wN4" customClass="SuitorsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L91-Jc-Cfb"/>
                         <viewControllerLayoutGuide type="bottom" id="jer-qi-DeR"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="KEG-U0-xXx">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="BBu-nd-Jri">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <color key="backgroundColor" red="0.21960784310000001" green="0.24313725489999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.21960784310000001" green="0.24313725489999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -164,11 +169,23 @@
                                 </prototypes>
                             </tableView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Well, no suitors to be found here.  Why don't you check back later?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PIE-vD-i3c">
-                                <rect key="frame" x="10" y="125" width="300" height="200"/>
+                                <rect key="frame" x="10" y="189" width="300" height="200"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qHI-pn-Lpq">
+                                <rect key="frame" x="0.0" y="15" width="320" height="44"/>
+                                <color key="backgroundColor" red="0.21960784310000001" green="0.24313725489999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.21960784310000001" green="0.24313725489999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="24"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Title" id="z2l-h9-xBM"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="0.21960784310000001" green="0.24313725489999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -181,6 +198,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="navItem" destination="z2l-h9-xBM" id="DN8-Ss-Xq1"/>
+                        <outlet property="navbar" destination="qHI-pn-Lpq" id="Szg-G3-DH5"/>
                         <outlet property="suitorlessText" destination="PIE-vD-i3c" id="gdo-f5-y5X"/>
                         <outlet property="suitorsTable" destination="BBu-nd-Jri" id="VYP-X5-dqH"/>
                         <segue destination="1W3-d7-v5C" kind="unwind" identifier="unwindToFriends" unwindAction="unwindToThisViewController:" id="jMU-AC-8zG"/>
@@ -194,17 +213,17 @@
         <!--Friends-->
         <scene sceneID="CUf-Cb-plf">
             <objects>
-                <viewController id="NL0-X5-rv3" customClass="FriendsViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FriendsViewController" id="NL0-X5-rv3" customClass="FriendsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="21E-G6-Ujn"/>
                         <viewControllerLayoutGuide type="bottom" id="pnB-kt-Vzl"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="7ew-xJ-ibQ">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" dataMode="prototypes" style="plain" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="100" sectionHeaderHeight="30" sectionFooterHeight="30" translatesAutoresizingMaskIntoConstraints="NO" id="Od9-hm-BKu">
-                                <rect key="frame" x="0.0" y="64" width="320" height="440"/>
+                                <rect key="frame" x="0.0" y="128" width="320" height="440"/>
                                 <color key="backgroundColor" red="0.21960784310000001" green="0.24313725489999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="separatorColor" red="0.21960784310000001" green="0.24313725489999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexColor" red="0.21960784310000001" green="0.24313725489999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -232,12 +251,12 @@
                                 </prototypes>
                             </tableView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Add a friend" borderStyle="line" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SGZ-Zy-oFK">
-                                <rect key="frame" x="47" y="8" width="200" height="48"/>
+                                <rect key="frame" x="10" y="72" width="237" height="48"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardType="alphabet" returnKeyType="go"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LWU-oH-qbj">
-                                <rect key="frame" x="255" y="16" width="48" height="33"/>
+                                <rect key="frame" x="255" y="80" width="48" height="33"/>
                                 <state key="normal" image="horizontalArrowRight.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -245,32 +264,31 @@
                                     <action selector="addFriend:" destination="NL0-X5-rv3" eventType="touchUpInside" id="5rg-Xj-D1Q"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SSw-4L-DnE">
-                                <rect key="frame" x="4" y="13" width="40" height="40"/>
-                                <state key="normal" image="settings.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="sL0-5m-bl1" kind="push" id="0VH-4p-XHe"/>
-                                </connections>
-                            </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Looks like you're lacking in the friends department.  Try adding a friend in the box above." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pIb-fY-Bf4">
-                                <rect key="frame" x="10" y="100" width="300" height="200"/>
+                                <rect key="frame" x="10" y="164" width="300" height="200"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
+                                <color key="highlightedColor" red="0.21960784310000001" green="0.24313725489999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Bp-S8-z8s">
+                                <rect key="frame" x="0.0" y="15" width="320" height="44"/>
+                                <color key="backgroundColor" red="0.21960784310000001" green="0.24313725489999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.21960784310000001" green="0.24313725489999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="24"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Title" id="doV-gG-5V2"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="0.21960784310000001" green="0.24313725489999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.21960784310000001" green="0.24313725489999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                     </view>
                     <navigationItem key="navigationItem" title="Friends" id="NJH-df-Mzv">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="cxq-ER-uR7">
-                            <connections>
-                                <segue destination="24d-Bp-rn3" kind="unwind" unwindAction="unwindToLoginViewController:" id="1MZ-t6-Tnf"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" title="Settings" id="cxq-ER-uR7"/>
                         <barButtonItem key="rightBarButtonItem" title="Suitors" id="df9-3I-0I3">
                             <connections>
                                 <action selector="goToSuitors:" destination="NL0-X5-rv3" id="5sO-Dw-4B1"/>
@@ -281,12 +299,12 @@
                         <outlet property="addFriendTextField" destination="SGZ-Zy-oFK" id="xsT-5M-xxg"/>
                         <outlet property="friendlessText" destination="pIb-fY-Bf4" id="A4Q-LP-huJ"/>
                         <outlet property="friendsTable" destination="Od9-hm-BKu" id="iVz-1M-QcZ"/>
-                        <segue destination="2LP-wv-wN4" kind="push" identifier="friendsToSuitors" id="B3U-Oh-MaC"/>
+                        <outlet property="navItem" destination="doV-gG-5V2" id="kN3-uf-xbY"/>
+                        <outlet property="navbar" destination="4Bp-S8-z8s" id="rFL-jv-Uis"/>
                         <segue destination="yhT-KA-E05" kind="push" identifier="friendsToCompass" id="2lj-Xl-wu3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rxx-OP-NEP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="24d-Bp-rn3" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1201" y="102"/>
         </scene>
@@ -299,10 +317,10 @@
                         <viewControllerLayoutGuide type="bottom" id="DLH-G0-NLJ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8aJ-Kt-DCM">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="240" translatesAutoresizingMaskIntoConstraints="NO" id="5pt-IL-r3E">
+                            <view contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="240" translatesAutoresizingMaskIntoConstraints="NO" id="5pt-IL-r3E">
                                 <rect key="frame" x="40" y="132" width="240" height="240"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="240" image="Compass-Overlay.png" translatesAutoresizingMaskIntoConstraints="NO" id="O4N-ek-y73">
@@ -346,25 +364,64 @@
             </objects>
             <point key="canvasLocation" x="1701" y="121"/>
         </scene>
+        <!--Page View Controller-->
+        <scene sceneID="qF3-se-CHJ">
+            <objects>
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Gva-Yr-2PI" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Ipp-38-NGk"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AOn-J8-lUA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="777" y="1784"/>
+        </scene>
         <!--Settings-->
         <scene sceneID="f1F-Y5-q0e">
             <objects>
-                <viewController id="sL0-5m-bl1" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="634-81-JNq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="SettingsViewController" id="sL0-5m-bl1" customClass="SettingsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qUO-WV-mHd"/>
                         <viewControllerLayoutGuide type="bottom" id="WWt-pp-plp"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="sjY-q8-NsY">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2J3-Zy-mab">
+                                <rect key="frame" x="101" y="309" width="118" height="53"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="30"/>
+                                <state key="normal" title="Log out">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="logout:" destination="sL0-5m-bl1" eventType="touchUpInside" id="Fdc-v4-Hvr"/>
+                                </connections>
+                            </button>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k53-kf-cCD">
+                                <rect key="frame" x="0.0" y="15" width="320" height="44"/>
+                                <color key="backgroundColor" red="0.21960784310000001" green="0.24313725489999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.21960784310000001" green="0.24313725489999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="24"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Title" id="ELe-lQ-jA5"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" red="0.21960784310000001" green="0.24313725489999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.21960784310000001" green="0.24313725489999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="bKb-gU-kuD"/>
                     <connections>
+                        <outlet property="logoutButton" destination="2J3-Zy-mab" id="oGO-wo-qXu"/>
+                        <outlet property="navItem" destination="ELe-lQ-jA5" id="l7P-8H-wYC"/>
+                        <outlet property="navbar" destination="k53-kf-cCD" id="4wi-nc-ecw"/>
                         <segue destination="uAq-v9-OZR" kind="push" id="MY4-OR-b9N"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="634-81-JNq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1202" y="935"/>
         </scene>
@@ -377,7 +434,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Wqo-sU-EWY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="bMx-xb-KSH">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -390,9 +447,10 @@
         <!--Pointr Navigation Controller-->
         <scene sceneID="qSb-6M-hvf">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TGm-ku-Mzw" customClass="PointrNavigationController" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="TGm-ku-Mzw" customClass="PointrNavigationController" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="l8t-nd-llN">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="l8t-nd-llN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -419,7 +477,6 @@
     <resources>
         <image name="Compass-Overlay.png" width="717" height="717"/>
         <image name="horizontalArrowRight.png" width="96" height="61"/>
-        <image name="settings.png" width="82" height="82"/>
         <image name="verticalArrowDown.png" width="61" height="96"/>
         <image name="verticalArrowUp.png" width="61" height="96"/>
     </resources>

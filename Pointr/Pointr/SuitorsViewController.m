@@ -22,16 +22,18 @@
     self.suitorsTable.dataSource = self;
     self.suitorsTable.delegate = self;
 
-    UISwipeGestureRecognizer *swipeLeftGesture=[[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeGesture:)];
-    swipeLeftGesture.direction=UISwipeGestureRecognizerDirectionRight;
-    [self.view addGestureRecognizer:swipeLeftGesture];
+//    UISwipeGestureRecognizer *swipeLeftGesture=[[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeGesture:)];
+//    swipeLeftGesture.direction=UISwipeGestureRecognizerDirectionRight;
+//    [self.view addGestureRecognizer:swipeLeftGesture];
     
+}
+
+-(void) viewWillAppear:(BOOL)animated {
     if ([self.suitorsList count] == 0) {
         self.suitorlessText.hidden = false;
     } else {
         self.suitorlessText.hidden = true;
     }
-    
 }
 
 
@@ -117,7 +119,7 @@
     NSIndexPath *hitIndex = [self.suitorsTable indexPathForRowAtPoint:hitPoint];
     NSIndexSet *hitSet = [[NSIndexSet alloc] initWithIndex:hitIndex.section];
     
-    NSMutableURLRequest *addFriend = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://pointr-backend.herokuapp.com%@", @"/friends/reject"]]];
+    NSMutableURLRequest *addFriend = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://pointr-backend-2.herokuapp.com%@", @"/friends/reject"]]];
     [addFriend setHTTPMethod:@"POST"];
     NSString *friendString = [NSString stringWithFormat:@"accessToken=%@&username=%@&friend_username=%@", self.accessToken, self.username, [self.suitorsList objectAtIndex:hitIndex.section]];
     [addFriend setHTTPBody:[friendString dataUsingEncoding:NSUTF8StringEncoding]];
@@ -141,7 +143,7 @@
     CGPoint hitPoint = [sender convertPoint:CGPointZero toView:self.suitorsTable];
     NSIndexPath *hitIndex = [self.suitorsTable indexPathForRowAtPoint:hitPoint];
     NSIndexSet *hitSet = [[NSIndexSet alloc] initWithIndex:hitIndex.section];
-    NSMutableURLRequest *addFriend = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://pointr-backend.herokuapp.com%@", @"/friends/add"]]];
+    NSMutableURLRequest *addFriend = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://pointr-backend-2.herokuapp.com%@", @"/friends/add"]]];
     [addFriend setHTTPMethod:@"POST"];
     NSString *friendString = [NSString stringWithFormat:@"accessToken=%@&username=%@&friend_username=%@", self.accessToken, self.username, [self.suitorsList objectAtIndex:hitIndex.section]];
     [addFriend setHTTPBody:[friendString dataUsingEncoding:NSUTF8StringEncoding]];

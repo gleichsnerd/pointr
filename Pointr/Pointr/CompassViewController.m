@@ -38,6 +38,7 @@ typedef enum {DIST_CLOSE, DIST_WALK, DIST_BIKE, DIST_CAR, DIST_FAR, DIST_TOOFAR}
 {
     
     [super viewDidLoad];
+    NSLog(@"Suitor %@ at lat: %f long: %f", self.friendName, self.friendLat, self.friendLong);
 //    self.pointr.layer.anchorPoint = CGPointMake(0.5, 0.5);
 //    self.pointr.layer.position = CGPointMake(self.pointr.image.size.width/2, self.pointr.image.size.height/2);
 //    self.pointr.center = CGPointMake(self.pointr.image.size.width/2, self.pointr.image.size.height/2);
@@ -60,7 +61,7 @@ typedef enum {DIST_CLOSE, DIST_WALK, DIST_BIKE, DIST_CAR, DIST_FAR, DIST_TOOFAR}
 
 - (NSDictionary *)setDistancePhrases
 {
-    NSDictionary *returnDict = [[NSDictionary alloc] init];
+    NSMutableDictionary *returnDict = [[NSMutableDictionary alloc] init];
     NSArray *closePhrases = [[NSArray alloc] initWithObjects:@"", nil];
     NSArray *walkPhrases = [[NSArray alloc] initWithObjects:@"", nil];
     NSArray *bikePhrases = [[NSArray alloc] initWithObjects:@"", nil];

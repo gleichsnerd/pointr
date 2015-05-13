@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F4428404E760A87C423985A /* libPods-Pointr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A3F689E668478AEDE1CF53E /* libPods-Pointr.a */; };
 		9B3B874619FBA2A10009CBB3 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B3B874519FBA2A10009CBB3 /* settings.png */; };
 		9B3B874919FBA7640009CBB3 /* SuitorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B3B874719FBA7640009CBB3 /* SuitorTableViewCell.m */; };
+		9B4B29931B001D7500B8EFB9 /* SettingsViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 9B4B29921B001D7500B8EFB9 /* SettingsViewController.h */; };
+		9B4B29951B001E9700B8EFB9 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4B29941B001E9700B8EFB9 /* SettingsViewController.m */; };
 		9BC7169B19833B0C002EA01F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BC7169A19833B0C002EA01F /* Foundation.framework */; };
 		9BC7169D19833B0C002EA01F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BC7169C19833B0C002EA01F /* CoreGraphics.framework */; };
 		9BC7169F19833B0C002EA01F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BC7169E19833B0C002EA01F /* UIKit.framework */; };
@@ -35,6 +38,7 @@
 		9BE40476199D2939003DC7E3 /* CompassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE40475199D2939003DC7E3 /* CompassViewController.m */; };
 		9BE40478199D4312003DC7E3 /* Compass-Overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BE40477199D4312003DC7E3 /* Compass-Overlay.png */; };
 		9BFDCF681995E9C900C83096 /* SuitorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BFDCF671995E9C900C83096 /* SuitorsViewController.m */; };
+		B86EA21AC04AB46CF2E40570 /* libPods-PointrTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 70F41E7662392D4760EA54CD /* libPods-PointrTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,9 +52,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A3F689E668478AEDE1CF53E /* libPods-Pointr.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Pointr.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		17A02F927E8277E7D321261A /* Pods-PointrTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PointrTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PointrTests/Pods-PointrTests.debug.xcconfig"; sourceTree = "<group>"; };
+		438AE31101D496036F2E7463 /* Pods-PointrTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PointrTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PointrTests/Pods-PointrTests.release.xcconfig"; sourceTree = "<group>"; };
+		70F41E7662392D4760EA54CD /* libPods-PointrTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PointrTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EEA34D08A6092ED692B53A7 /* Pods-Pointr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pointr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pointr/Pods-Pointr.debug.xcconfig"; sourceTree = "<group>"; };
 		9B3B874519FBA2A10009CBB3 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		9B3B874719FBA7640009CBB3 /* SuitorTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuitorTableViewCell.m; sourceTree = "<group>"; };
 		9B3B874819FBA7640009CBB3 /* SuitorTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuitorTableViewCell.h; sourceTree = "<group>"; };
+		9B4B29921B001D7500B8EFB9 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		9B4B29941B001E9700B8EFB9 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		9BC7169719833B0C002EA01F /* Pointr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pointr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BC7169A19833B0C002EA01F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9BC7169C19833B0C002EA01F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -86,6 +97,7 @@
 		9BE40477199D4312003DC7E3 /* Compass-Overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Compass-Overlay.png"; sourceTree = SOURCE_ROOT; };
 		9BFDCF661995E9C900C83096 /* SuitorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuitorsViewController.h; sourceTree = "<group>"; };
 		9BFDCF671995E9C900C83096 /* SuitorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuitorsViewController.m; sourceTree = "<group>"; };
+		9DABD2D5FD101666D3A99B03 /* Pods-Pointr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pointr.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pointr/Pods-Pointr.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +109,7 @@
 				9BC7169D19833B0C002EA01F /* CoreGraphics.framework in Frameworks */,
 				9BC7169F19833B0C002EA01F /* UIKit.framework in Frameworks */,
 				9BC7169B19833B0C002EA01F /* Foundation.framework in Frameworks */,
+				6F4428404E760A87C423985A /* libPods-Pointr.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +120,7 @@
 				9BC716BA19833B0C002EA01F /* XCTest.framework in Frameworks */,
 				9BC716BC19833B0C002EA01F /* UIKit.framework in Frameworks */,
 				9BC716BB19833B0C002EA01F /* Foundation.framework in Frameworks */,
+				B86EA21AC04AB46CF2E40570 /* libPods-PointrTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +135,7 @@
 				9BC7169919833B0C002EA01F /* Frameworks */,
 				9BC7169819833B0C002EA01F /* Products */,
 				9BC716CF198359D2002EA01F /* Pointr.mobileprovision */,
+				D9B6991687425F8AD8155603 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -141,6 +156,8 @@
 				9BC7169C19833B0C002EA01F /* CoreGraphics.framework */,
 				9BC7169E19833B0C002EA01F /* UIKit.framework */,
 				9BC716B919833B0C002EA01F /* XCTest.framework */,
+				0A3F689E668478AEDE1CF53E /* libPods-Pointr.a */,
+				70F41E7662392D4760EA54CD /* libPods-PointrTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -170,6 +187,8 @@
 				9B3B874819FBA7640009CBB3 /* SuitorTableViewCell.h */,
 				9BC716AF19833B0C002EA01F /* PointrNavigationController.h */,
 				9BC716B019833B0C002EA01F /* PointrNavigationController.m */,
+				9B4B29921B001D7500B8EFB9 /* SettingsViewController.h */,
+				9B4B29941B001E9700B8EFB9 /* SettingsViewController.m */,
 				9BC716B219833B0C002EA01F /* Images.xcassets */,
 				9BC716A119833B0C002EA01F /* Supporting Files */,
 			);
@@ -205,6 +224,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D9B6991687425F8AD8155603 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7EEA34D08A6092ED692B53A7 /* Pods-Pointr.debug.xcconfig */,
+				9DABD2D5FD101666D3A99B03 /* Pods-Pointr.release.xcconfig */,
+				17A02F927E8277E7D321261A /* Pods-PointrTests.debug.xcconfig */,
+				438AE31101D496036F2E7463 /* Pods-PointrTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -212,9 +242,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9BC716C919833B0C002EA01F /* Build configuration list for PBXNativeTarget "Pointr" */;
 			buildPhases = (
+				484EB29CCDF4AD471BABC64D /* Check Pods Manifest.lock */,
 				9BC7169319833B0C002EA01F /* Sources */,
 				9BC7169419833B0C002EA01F /* Frameworks */,
 				9BC7169519833B0C002EA01F /* Resources */,
+				F53C20060F37747F32D69717 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -229,9 +261,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9BC716CC19833B0C002EA01F /* Build configuration list for PBXNativeTarget "PointrTests" */;
 			buildPhases = (
+				166027795042D5C442AE9D96 /* Check Pods Manifest.lock */,
 				9BC716B419833B0C002EA01F /* Sources */,
 				9BC716B519833B0C002EA01F /* Frameworks */,
 				9BC716B619833B0C002EA01F /* Resources */,
+				A123D2B51378702B3BBA5290 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -309,6 +343,69 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		166027795042D5C442AE9D96 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		484EB29CCDF4AD471BABC64D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A123D2B51378702B3BBA5290 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PointrTests/Pods-PointrTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F53C20060F37747F32D69717 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Pointr/Pods-Pointr-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9BC7169319833B0C002EA01F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -317,9 +414,11 @@
 				9BC716E51983B3BF002EA01F /* FriendsViewController.m in Sources */,
 				9B3B874919FBA7640009CBB3 /* SuitorTableViewCell.m in Sources */,
 				9BC716DE198387B6002EA01F /* LoginRegisterViewController.m in Sources */,
+				9B4B29931B001D7500B8EFB9 /* SettingsViewController.h in Sources */,
 				9BC716AB19833B0C002EA01F /* BSHAppDelegate.m in Sources */,
 				9BC716A719833B0C002EA01F /* main.m in Sources */,
 				9BFDCF681995E9C900C83096 /* SuitorsViewController.m in Sources */,
+				9B4B29951B001E9700B8EFB9 /* SettingsViewController.m in Sources */,
 				9BC716B119833B0C002EA01F /* PointrNavigationController.m in Sources */,
 				9BE40476199D2939003DC7E3 /* CompassViewController.m in Sources */,
 			);
@@ -443,6 +542,7 @@
 		};
 		9BC716CA19833B0C002EA01F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7EEA34D08A6092ED692B53A7 /* Pods-Pointr.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -459,6 +559,7 @@
 		};
 		9BC716CB19833B0C002EA01F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DABD2D5FD101666D3A99B03 /* Pods-Pointr.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -475,6 +576,7 @@
 		};
 		9BC716CD19833B0C002EA01F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17A02F927E8277E7D321261A /* Pods-PointrTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Pointr.app/Pointr";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -497,6 +599,7 @@
 		};
 		9BC716CE19833B0C002EA01F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 438AE31101D496036F2E7463 /* Pods-PointrTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Pointr.app/Pointr";
 				FRAMEWORK_SEARCH_PATHS = (
