@@ -30,7 +30,7 @@
 		9BC716E51983B3BF002EA01F /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC716E41983B3BF002EA01F /* FriendsViewController.m */; };
 		9BC716E71983BD1F002EA01F /* horizontalArrowRight.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BC716E61983BD1F002EA01F /* horizontalArrowRight.png */; };
 		9BC716E91983BFCB002EA01F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BC716E81983BFCB002EA01F /* CoreLocation.framework */; };
-		9BE40476199D2939003DC7E3 /* compassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE40475199D2939003DC7E3 /* compassViewController.m */; };
+		9BE40476199D2939003DC7E3 /* CompassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE40475199D2939003DC7E3 /* CompassViewController.m */; };
 		9BE40478199D4312003DC7E3 /* Compass-Overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BE40477199D4312003DC7E3 /* Compass-Overlay.png */; };
 		9BFDCF681995E9C900C83096 /* SuitorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BFDCF671995E9C900C83096 /* SuitorsViewController.m */; };
 		9BFDCF6B19972CB000C83096 /* SuitorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BFDCF6A19972CB000C83096 /* SuitorTableViewCell.m */; };
@@ -77,8 +77,8 @@
 		9BC716E41983B3BF002EA01F /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
 		9BC716E61983BD1F002EA01F /* horizontalArrowRight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = horizontalArrowRight.png; sourceTree = "<group>"; };
 		9BC716E81983BFCB002EA01F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		9BE40474199D2939003DC7E3 /* compassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = compassViewController.h; sourceTree = "<group>"; };
-		9BE40475199D2939003DC7E3 /* compassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = compassViewController.m; sourceTree = "<group>"; };
+		9BE40474199D2939003DC7E3 /* CompassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompassViewController.h; sourceTree = "<group>"; };
+		9BE40475199D2939003DC7E3 /* CompassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CompassViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		9BE40477199D4312003DC7E3 /* Compass-Overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Compass-Overlay.png"; sourceTree = SOURCE_ROOT; };
 		9BFDCF661995E9C900C83096 /* SuitorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuitorsViewController.h; sourceTree = "<group>"; };
 		9BFDCF671995E9C900C83096 /* SuitorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuitorsViewController.m; sourceTree = "<group>"; };
@@ -153,8 +153,8 @@
 				9BC716E61983BD1F002EA01F /* horizontalArrowRight.png */,
 				9BC716E31983B3BF002EA01F /* FriendsViewController.h */,
 				9BC716E41983B3BF002EA01F /* FriendsViewController.m */,
-				9BE40474199D2939003DC7E3 /* compassViewController.h */,
-				9BE40475199D2939003DC7E3 /* compassViewController.m */,
+				9BE40474199D2939003DC7E3 /* CompassViewController.h */,
+				9BE40475199D2939003DC7E3 /* CompassViewController.m */,
 				9BC716DF1983A69F002EA01F /* verticalArrowDown.png */,
 				9BC716E01983A69F002EA01F /* verticalArrowUp.png */,
 				9BC716D519837E3A002EA01F /* loginButton.png */,
@@ -314,7 +314,7 @@
 				9BC716A719833B0C002EA01F /* main.m in Sources */,
 				9BFDCF681995E9C900C83096 /* SuitorsViewController.m in Sources */,
 				9BC716B119833B0C002EA01F /* PointrNavigationController.m in Sources */,
-				9BE40476199D2939003DC7E3 /* compassViewController.m in Sources */,
+				9BE40476199D2939003DC7E3 /* CompassViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

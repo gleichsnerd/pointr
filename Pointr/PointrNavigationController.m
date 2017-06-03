@@ -18,7 +18,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 6) {
+    if ([[[UIDevice currentDevice] systemVersion] doubleValue] >= 6) {
         [[UINavigationBar appearance] setShadowImage:[[UIImage alloc] init]];
         [[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
     } else

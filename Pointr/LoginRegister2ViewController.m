@@ -9,11 +9,13 @@
 #import "LoginRegister2ViewController.h"
 #import "BSHAppDelegate.h"
 #import "FriendsViewController.h"
+#import <CoreLocation/CoreLocation.h>
 
 @interface LoginRegister2ViewController ()
 
 @property (nonatomic, strong) NSMutableData *receivedData;
 @property (nonatomic, strong) NSString *accessToken;
+@property (nonatomic, strong) CLLocationManager *locationManager;
 
 @end
 
@@ -40,6 +42,14 @@
                                    action:@selector(dismissKeyboard)];
 
     [self.view addGestureRecognizer:self.tap];
+    
+    self.locationManager = [[CLLocationManager alloc] init];
+    
+    [self.locationManager startUpdatingLocation];
+    CLLocationDegrees latitude = self.locationManager.location.coordinate.latitude;
+    CLLocationDegrees longitude = self.locationManager.location.coordinate.longitude;
+    [self.locationManager stopUpdatingLocation];
+    self.locationManager = nil;
 //    [tap setCancelsTouchesInView:NO];
     
 }

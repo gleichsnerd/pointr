@@ -8,6 +8,7 @@
 
 #import "FriendsViewController.h"
 #import "SuitorsViewController.h"
+#import "CompassViewController.h"
 #import <CoreLocation/CoreLocation.h>
 
 @interface FriendsViewController ()
@@ -18,6 +19,9 @@
 
 @property (nonatomic, strong) NSMutableArray *friendsList;
 @property (nonatomic, strong) NSMutableArray *suitorsList;
+
+@property double sendLat;
+@property double sendLong;
 
 @end
 
@@ -58,6 +62,8 @@
         }
     }
 }
+
+
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -177,7 +183,7 @@
     cell.backgroundColor = [UIColor clearColor];
     cell.opaque = NO;
     
-    cell.textLabel.text = [self.friendsList objectAtIndex:indexPath.row]; //objectForKey:@"username"];
+    cell.textLabel.text = [[self.friendsList objectAtIndex:indexPath.row] objectForKey:@"username"]; //objectForKey:@"username"];
 //    //Sets backgroundView to display an image instead of a solid color
 //    cell.backgroundView = [[UIImageView alloc] initWithImage: [UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/%@", [[NSBundle mainBundle] resourcePath],@"lh_tab_w_arrow.png"]]];
     
@@ -195,6 +201,11 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"Selected row %d", indexPath.row);
+    id preLat = [[self.friendsList objectAtIndex:indexPath.row] valueForKey:@"latitude"];
+    id preLong = [[self.friendsList objectAtIndex:indexPath.row] objectForKey:@"longitude"];
+    self.sendLat = [preLat doubleValue];
+    self.sendLong = [preLong doubleValue];
+    
     [self performSegueWithIdentifier:@"friendsToCompass" sender:self];
 }
 
@@ -209,6 +220,10 @@
         destination.suitorsList = self.suitorsList;
         destination.username = self.username;
         destination.accessToken = self.accessToken;
+    } else if([segue.identifier isEqualToString:@"friendsToCompass"]) {
+        CompassViewController *destination = [segue destinationViewController];
+        destination.friendLat = self.sendLat;
+        destination.friendLong = self.sendLong;
     }
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.

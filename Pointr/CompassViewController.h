@@ -8,7 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
-@interface compassViewController : UIViewController <CLLocationManagerDelegate>
+@interface CompassViewController : UIViewController <CLLocationManagerDelegate>
+@property (weak, nonatomic) IBOutlet UIView *north;
+@property (weak, nonatomic) IBOutlet UIView *background;
 @property (weak, nonatomic) IBOutlet UIImageView *pointr;
+@property double friendLat;
+@property double friendLong;
+
 
 @end

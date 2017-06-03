@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>1486EF10-1C1B-41E1-9AB6-B4557EDE7FBE</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Pointr</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>C45510CD-A976-44B0-BFC9-706511368AD3</key>
+		<string>https://github.com/gleichsnerd/pointr.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Pointr.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>C45510CD-A976-44B0-BFC9-706511368AD3</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/gleichsnerd/pointr.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C45510CD-A976-44B0-BFC9-706511368AD3</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C45510CD-A976-44B0-BFC9-706511368AD3</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Pointr</string>
+		</dict>
+	</array>
+</dict>
+</plist>

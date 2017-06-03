@@ -252,7 +252,7 @@
         <!--Compass View Controller - Compass-->
         <scene sceneID="sLs-Cr-5C1">
             <objects>
-                <viewController id="yhT-KA-E05" customClass="compassViewController" sceneMemberID="viewController">
+                <viewController id="yhT-KA-E05" customClass="CompassViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3aY-Fj-lwG"/>
                         <viewControllerLayoutGuide type="bottom" id="DLH-G0-NLJ"/>
@@ -261,22 +261,40 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9ah-aq-K4q">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="0.21960784310000001" green="0.24313725489999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" red="0.21960784310000001" green="0.24313725489999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Compass-Overlay.png" translatesAutoresizingMaskIntoConstraints="NO" id="9Hm-eA-rly">
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="240" translatesAutoresizingMaskIntoConstraints="NO" id="5pt-IL-r3E">
                                 <rect key="frame" x="40" y="132" width="240" height="240"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="240" image="Compass-Overlay.png" translatesAutoresizingMaskIntoConstraints="NO" id="O4N-ek-y73">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="240" id="Tcf-Eb-bDK"/>
+                                            <constraint firstAttribute="width" constant="240" id="jmB-Ke-Dki"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="2MC-LY-DBm"/>
+                                    <constraint firstItem="O4N-ek-y73" firstAttribute="top" secondItem="5pt-IL-r3E" secondAttribute="top" id="cpF-Md-G2Q"/>
+                                    <constraint firstItem="O4N-ek-y73" firstAttribute="leading" secondItem="5pt-IL-r3E" secondAttribute="leading" id="gfS-M8-y7W"/>
+                                    <constraint firstAttribute="height" constant="240" id="mj2-NU-jT7"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.21960784310000001" green="0.24313725489999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="5pt-IL-r3E" firstAttribute="top" secondItem="3aY-Fj-lwG" secondAttribute="bottom" constant="132" id="9Yr-vX-sAb"/>
+                            <constraint firstItem="5pt-IL-r3E" firstAttribute="leading" secondItem="8aJ-Kt-DCM" secondAttribute="leading" constant="40" id="l0I-yk-yBH"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Compass" id="VPr-IA-EjO"/>
                     <connections>
-                        <outlet property="pointr" destination="9Hm-eA-rly" id="sDe-eB-zD3"/>
+                        <outlet property="background" destination="8aJ-Kt-DCM" id="zwm-uu-XEO"/>
+                        <outlet property="north" destination="5pt-IL-r3E" id="exg-eC-ma2"/>
+                        <outlet property="pointr" destination="O4N-ek-y73" id="GKm-IE-YAV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5u9-Ph-Tak" userLabel="First Responder" sceneMemberID="firstResponder"/>
