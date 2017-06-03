@@ -1,0 +1,10 @@
+PODS:
+  - SLPagingView (0.0.5)
+
+DEPENDENCIES:
+  - SLPagingView
+
+SPEC CHECKSUMS:
+  SLPagingView: ba9bb6102cb318ce56f23d0a7e49a46ddcdad7e3
+
+COCOAPODS: 0.37.1

@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>1486EF10-1C1B-41E1-9AB6-B4557EDE7FBE</string>
+	<string>8B4DB66E-3F07-447E-B2ED-DC50C15786F2</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Pointr</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -14,11 +14,11 @@
 		<string>https://github.com/gleichsnerd/pointr.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Pointr/Pointr.xcodeproj</string>
+	<string>Pointr/Pointr.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>10D4B9E3D8E0C49DAE77536205C4053CB3A3A8AC</key>
-		<string>../../..</string>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/gleichsnerd/pointr.git</string>

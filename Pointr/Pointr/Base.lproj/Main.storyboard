@@ -367,17 +367,14 @@
         <!--Page View Controller-->
         <scene sceneID="qF3-se-CHJ">
             <objects>
-                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Gva-Yr-2PI" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="Ipp-38-NGk"/>
-                </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AOn-J8-lUA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Gva-Yr-2PI" customClass="PageViewController" sceneMemberID="viewController"/>
             </objects>
-            <point key="canvasLocation" x="777" y="1784"/>
+            <point key="canvasLocation" x="625" y="856"/>
         </scene>
         <!--Settings-->
         <scene sceneID="f1F-Y5-q0e">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="634-81-JNq" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="SettingsViewController" id="sL0-5m-bl1" customClass="SettingsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qUO-WV-mHd"/>
@@ -422,6 +419,7 @@
                         <segue destination="uAq-v9-OZR" kind="push" id="MY4-OR-b9N"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="634-81-JNq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1202" y="935"/>
         </scene>
